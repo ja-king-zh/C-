@@ -1,0 +1,21 @@
+﻿生成启动时间为 2021/4/23 10:42:34。
+     1>项目“C:\Users\james\Desktop\Python\4.21\4.21\4.21.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Debug\4.21.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         所有输出均为最新。
+       Link:
+         所有输出均为最新。
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\james\Desktop\Python\4.21\Debug\4.21.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\4.21.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\james\Desktop\Python\4.21\Debug\4.21.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\james\Desktop\Python\4.21\Debug\4.21.lib" /MACHINE:X86 Debug\1.obj
+         LINK : 没有找到 C:\Users\james\Desktop\Python\4.21\Debug\4.21.exe 或上一个增量链接没有生成它；正在执行完全链接
+         4.21.vcxproj -> C:\Users\james\Desktop\Python\4.21\Debug\4.21.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\james\Desktop\Python\4.21\Debug\4.21.exe;#1" /manifest Debug\4.21.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Debug\4.21.unsuccessfulbuild”。
+         正在对“Debug\4.21.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“C:\Users\james\Desktop\Python\4.21\4.21\4.21.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.40
