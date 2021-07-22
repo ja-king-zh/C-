@@ -54,12 +54,26 @@
 //}
 
 
-void Add(int* p) {
-	*p = *p + 1;
+//void Add(int* p) {
+//	*p = *p + 1;
+//}
+//int main() {
+//	int num=0;
+//	Add(&num);
+//	printf("%d", num);
+//	return 0;
+//}
+
+
+void chengfabiao(int n){
+	for(int i=1;i<=n;i++){
+		for(int j=1;j<=i;j++){
+			printf("%d*%d=%d ",j,i,j*i);
+		}
+		printf("\n");
+	}
 }
-int main() {
-	int num=0;
-	Add(&num);
-	printf("%d", num);
+int main(){
+	chengfabiao(n);
 	return 0;
 }
