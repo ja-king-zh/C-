@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.19041.0:
 Debug|Win32|C:\Users\james\Desktop\Python\test_8_13\|
+=======
+PlatformToolSet=v142:VCToolArchitecture=Native32Bit:VCToolsVersion=14.28.29910:TargetPlatformVersion=10.0.19041.0:
+Debug|Win32|C:\Users\james\Desktop\Python\test_8_13\|
+>>>>>>> 875c37c7ac010cb3942579f6d2c1f10985a991ba
