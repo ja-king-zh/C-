@@ -29,11 +29,16 @@ using namespace std;
 //}
 
 
-int main() {
-	string str = "hello world";
-	cout << str << endl;
-	int a;
-	cin >> a;
-	cout << a << endl;
-	return 0;
-}
+//int main() {
+//	/*string str = "hello world";
+//	cout << str << endl;
+//	int a;
+//	cin >> a;
+//	cout << a << endl;*/
+//	int a = 10;
+//	a += a *= a -= a / 3;
+//	printf("%d", a);
+//	return 0;
+//}
+
+
