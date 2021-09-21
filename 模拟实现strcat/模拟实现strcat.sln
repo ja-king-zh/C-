@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "模拟实现strcat", "模拟实现strcat.vcxproj", "{83C9465C-10B9-48C5-B844-9BBF48CA6955}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Debug|x64.ActiveCfg = Debug|x64
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Debug|x64.Build.0 = Debug|x64
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Debug|x86.ActiveCfg = Debug|Win32
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Debug|x86.Build.0 = Debug|Win32
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Release|x64.ActiveCfg = Release|x64
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Release|x64.Build.0 = Release|x64
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Release|x86.ActiveCfg = Release|Win32
+		{83C9465C-10B9-48C5-B844-9BBF48CA6955}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61CE5845-3EEC-459F-908A-F37AA57A4967}
+	EndGlobalSection
+EndGlobal
