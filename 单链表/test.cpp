@@ -21,6 +21,16 @@ void test() {
 		SListInsert(Slist, pos, 5);
 	}
 	SListPrint(Slist);
+	pos = SListFind(Slist, 10);
+	if (pos) {
+		SListErase(Slist, pos);
+	}
+	SListPrint(Slist);
+	pos = SListFind(Slist, 5);
+	if (pos) {
+		SListInsertAfter(pos, 6);
+	}
+	SListPrint(Slist);
 }
 int main() {
 	test();

@@ -16,4 +16,5 @@ void SListPopFront(SLT*& phead);
 SLT* SListFind(SLT* phead, SLTDateType x);
 void SListInsert(SLT*& phead, SLT* pos, SLTDateType x);
 void SListErase(SLT*& phead, SLT* pos);
+void SListInsertAfter(SLT* pos, SLTDateType x);
 void SListDestroy(SLT*& phead);

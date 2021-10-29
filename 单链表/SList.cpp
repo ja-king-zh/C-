@@ -107,5 +107,37 @@ void SListInsert(SLT*& phead, SLT* pos, SLTDateType x) {
 }
 
 void SListErase(SLT*& phead, SLT* pos) {
+	SLT* cur = phead;
+	SLT* prev = NULL;
+	if (phead == pos)
+		phead = phead->next;
+	else {
+		while (cur) {
+			if (cur == pos) {
+				prev->next = cur->next;
+				break;
+			}
+			else {
+				prev = cur;
+				cur = cur->next;
+			}
+		}
+	}
+}
 
+void SListInsertAfter(SLT* pos, SLTDateType x) {
+	SLT* newnode = (SLT*)malloc(sizeof(SLT));
+	newnode->data = x;
+	newnode->next = pos->next;
+	pos->next = newnode;
+}
+
+void SListDestroy(SLT*& phead) {
+	SLT* cur = phead;
+	while (cur) {
+		SLT* next = cur->next;
+		free(cur);
+		cur = next;
+	}
+	phead = NULL;
 }
