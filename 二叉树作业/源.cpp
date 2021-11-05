@@ -5,44 +5,187 @@
 using namespace std;
 #include<queue>
 typedef char Elemtype;
-//4.
 typedef struct tree {
 	tree* left;
 	tree* right;
 	Elemtype data;
 }tree;
-tree* createtree() {
+tree* prevcreate() {
 	tree* T = (tree*)malloc(sizeof(tree));
-	Elemtype a;
+	char a;
 	cin >> a;
-	if (a == '#') {
+	if (a == '*') {
 		T = NULL;
 	}
 	else {
 		T->data = a;
-		T->left = createtree();
-		T->right = createtree();
+		T->left = prevcreate();
+		T->right = prevcreate();
 	}
 	return T;
 }
-int n = 1;
-void prevvist(tree* T,int x) {
-	n++;
-	if (x == n)
-		printf("%c",T->data);
+void shanchu(tree** T) {
+	if (*T) {
+		shanchu(&(*T)->left);
+		s4hanchu(&(*T)->right);
+		free(*T);
+		*T = NULL;
+	}
+}
+void Delete(tree** T, char a) {
+	if ((*T) == NULL)return;
+	if ((*T)->data == a) {
+		shanchu(T);
+	}
+	if ((*T)) {
+		Delete(&(*T)->left, a);
+		Delete(&(*T)->right, a);
+	}
+
+}
+void print(tree* T) {
+	if (T) {
+		cout << T->data;
+		print(T->left);
+		print(T->right);
+	}
+}
+void floor(tree* T) {
+	queue<tree*>q;
+	tree* tmp;
 	if (T == NULL)return;
-	prevvist(T->left, x);
-	prevvist(T->right, x);
-	
+	q.push(T);
+	while (!q.empty()) {
+		tmp = q.front();
+		cout << tmp->data;
+		q.pop();
+		if (tmp->left) {
+			q.push(tmp->left);
+		}
+		if (tmp->right) {
+			q.push(tmp->right);
+		}
+
+	}
 }
 int main() {
 	tree* T;
-	T = createtree();
-	int x;
-	cin >> x;
-	prevvist(T,x);
+	T = prevcreate();
+	floor(T);
+	/*char a;
+	cin >> a;
+	Delete(&T, a);
+	print(T);*/
 	return 0;
 }
+
+
+
+
+
+
+
+
+
+//typedef struct tree {
+//	tree* left;
+//	tree* right;
+//	Elemtype data;
+//}tree;
+//tree* prevcreate() {
+//	char a;
+//	tree* T;
+//	T = (tree*)malloc(sizeof(tree));
+//	cin >> a;
+//	if (a == '#') {
+//		T = NULL;
+//	}
+//	else {
+//		T->data = a;
+//		T->left = prevcreate();
+//		T->right = prevcreate();
+//	}
+//	return T;
+//}
+//void shifang(tree** T) {
+//	if (*T) {
+//		shifang(&(*T)->left);
+//		shifang(&(*T)->right);
+//		delete(*T);
+//		*T = NULL;
+//	}
+//}
+//void Delete(tree** T,char a) {
+//	if ((*T) == NULL)return;
+//	if (a == (*T)->data) {
+//		shifang(T);
+//	}
+//	if (*T) {
+//		Delete(&(*T)->left, a);
+//		Delete(&(*T)->right, a);
+//	}
+//}
+//void prevprint(tree* T) {
+//	if (T) {
+//		cout << T->data;
+//		prevprint(T->left);
+//		prevprint(T->right);
+//	}
+//}
+//int main() {
+//	tree* T = NULL;
+//	T=prevcreate();
+//	char a;
+//	cin >> a;
+//	Delete(&T,a);
+//	prevprint(T);
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+////4.
+//typedef struct tree {
+//	tree* left;
+//	tree* right;
+//	Elemtype data;
+//}tree;
+//tree* createtree() {
+//	tree* T = (tree*)malloc(sizeof(tree));
+//	Elemtype a;
+//	cin >> a;
+//	if (a == '#') {
+//		T = NULL;
+//	}
+//	else {
+//		T->data = a;
+//		T->left = createtree();
+//		T->right = createtree();
+//	}
+//	return T;
+//}
+//int x;
+//void prevvist(tree* T) {
+//	if (T == NULL)return;
+//	x--;
+//	if (x == 0&&T!=NULL)printf("%c",T->data);
+//	prevvist(T->left);
+//	prevvist(T->right);
+//	
+//}
+//
+//int main() {
+//	tree* T;
+//	T = createtree();
+//	cin >> x;
+//	prevvist(T);
+//	return 0;
+//}
 
 
 

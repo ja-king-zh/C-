@@ -1,0 +1,3 @@
+﻿  test.cpp
+C:\Users\james\Desktop\Python\C-\双向链表\test.cpp(2,9): warning C4067: 预处理器指令后有意外标记 - 应输入换行符
+  双向链表.vcxproj -> C:\Users\james\Desktop\Python\C-\双向链表\Debug\双向链表.exe
