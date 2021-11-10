@@ -50,7 +50,7 @@ int QueueSize(Queue* ps) {
 	QueueNode* cur = ps->head;
 	int size = 0;
 	while (cur != NULL) {
-		cur++;
+		cur=cur->next;
 		++size;
 	}
 	return size;
