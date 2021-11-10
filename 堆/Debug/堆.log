@@ -1,5 +1,2 @@
-﻿  Heap.cpp
-C:\Users\james\Desktop\Python\C-\堆\Heap.cpp(39,30): warning C4554: “>>”: 检查运算符优先级是否存在的可能的错误；使用括号阐明优先级
-  test.cpp
-  正在生成代码...
+﻿  test.cpp
   堆.vcxproj -> C:\Users\james\Desktop\Python\C-\堆\Debug\堆.exe

@@ -19,3 +19,6 @@ void HeapPop(HP* hp);
 void HeapPrint(HP* hp);
 bool HeapEmpty(HP* hp);
 int HeapSize(HP* hp);
+void Adjustup(int* a, int child);
+void Adjustdown(int* a, int n, int parent);
+void Swap(Elemtype* x, Elemtype* y);

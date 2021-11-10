@@ -18,10 +18,10 @@ void HeapDestroy(HP* hp) {
 void Adjustdown(int* a, int n, int parent) {
 	int child = 2 * parent + 1;
 	while (child < n) {
-		if (child + 1 < n && a[child + 1] < a[child]) {
+		if (child + 1 < n && a[child + 1] > a[child]) {
 			child++;
 		}
-		if (a[parent] > a[child]) {
+		if (a[parent] < a[child]) {
 			Swap(&a[parent], &a[child]);
 			parent = child;
 			child = parent * 2 + 1;
