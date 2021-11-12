@@ -9,8 +9,12 @@ void test() {
 	}
 	HeapPrint(&hp);
 }
+
+//topk问题，建立小堆，大于堆顶则Adjustdown。
+
 int main() {
 	//test();
+	//堆排序：
 	int a[] = { 70,56,30,25,15,10,75 };
 	int sz = sizeof(a) / sizeof(a[0]);
 	for (int i = 0;i < sz;++i) {
