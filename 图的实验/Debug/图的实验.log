@@ -1,2 +1,3 @@
 ﻿  源.cpp
+C:\Users\james\Desktop\Python\C-\图的实验\源.cpp(42,13): warning C4101: “cost”: 未引用的局部变量
   图的实验.vcxproj -> C:\Users\james\Desktop\Python\C-\图的实验\Debug\图的实验.exe
