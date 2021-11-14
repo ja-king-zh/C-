@@ -1,6 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include<stdio.h>
 #include<stdlib.h>
+#include<iostream>
+using namespace std;
+#include<queue>
 typedef char BTDate;
 typedef struct BinaryTreeNode {
 	struct BinaryTreeNode* left;
@@ -99,6 +102,37 @@ BTNode* Treefind(BTNode* t,BTDate x) {
 	if (r != NULL)return r;
 	return NULL;
 }
+
+//层次遍历
+//略，easy!!
+
+
+
+//判断是否为完全二叉树
+bool TreeComplete(BTNode* t) {
+	queue<BTNode*>q;
+	q.push(t);
+	while (!q.empty()) {
+		BTNode* f = q.front();
+		q.pop();
+		if (f == NULL)break;
+		q.push(f->left);
+		q.push(f->right);
+	}
+	while (!q.empty()) {
+		BTNode* f = q.front();
+		q.pop();
+		if (f)return false;
+	}
+	return true;
+}
+//二叉树的销毁
+void TreeDestroy(BTNode* t) {
+	if (t == NULL)return;
+	TreeDestroy(t->left);
+	TreeDestroy(t->right);
+	free(t);
+}
 int main() {
 	BTNode* t;
 	t=Createtree();
@@ -107,6 +141,8 @@ int main() {
 	printf("%d\n", TreeLeafSize(t));
 	printf("%d\n", TreeKtravelSize(t,3));
 	printf("%d\n", TreeDepth(t));
-
+	printf("%d\n", TreeComplete(t));
+	TreeDestroy(t);
+	t = NULL;
 	return 0;
 }
