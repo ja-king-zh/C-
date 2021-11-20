@@ -1,43 +1,294 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-
 #include<cstring>
 #include<iostream>
+#include<queue>
 #include<algorithm>
 using namespace std;
 const int N = 110;
-int g[N][N], dist[N];
-bool st[N];
+int e[N], ne[N], h[N], idx;
+bool st[N],qst[N];
 int n, m;
 
-int prim() {
-	memset(dist, 0x3f, sizeof dist);
-	int ans = 0;
+void add(int a, int b) {
+	e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+}
+void dfs(int x) {
+	st[x] = true;
+	cout << x << ' ';
+	for (int i = h[x];i != -1;i = ne[i]) {
+		int j = e[i];
+		if(!st[j])
+			dfs(j);
+	}
+}
+int main() {
+	memset(h, -1, sizeof h);
+	cin >> n >> m;
 	for (int i = 0;i < n;i++) {
-		int t = -1;
-		for (int j = 1;j <= n;j++) {
-			if (!st[j] && (t == -1 || dist[t] > dist[j])) {
-				t = j;
+		int a;
+		cin >> a;
+	}
+	while (m--) {
+		int a, b;
+		cin >> a >> b;
+		add(a, b);
+		add(b, a);
+	}
+	dfs(1);
+	cout << endl;
+	queue<int>q;
+	q.push(1);
+	qst[1] = true;
+	while (!q.empty()) {
+		int t = q.front();
+		q.pop();
+		cout << t << ' ';
+		for (int i = h[t];i != -1;i = ne[i]) {
+			int j = e[i];
+			if (!qst[j]) {
+				q.push(j);
+				qst[j] = true;
 			}
 		}
-		st[t] = true;
-		if (i)ans += dist[t];
-		for (int j = 1;j <= n;j++)dist[j] = min(dist[j], g[t][j]);
 	}
-	return ans;
-}
-
-int main() {
-	memset(g, 0x3f, sizeof g);
-	cin >> n >> m;
-	while (m--) {
-		int a, b, c;
-		cin >> a >> b >> c;
-		g[a][b] = g[b][a] = min(g[a][b], c);
-	}
-	int t = prim();
-	cout << t;
 	return 0;
 }
+
+
+
+
+
+//#include<cstring>
+//#include<queue>
+//#include<iostream>
+//#include<stdio.h>
+//#include<algorithm>
+//using namespace std;
+//const int N = 110;
+//int e[N], ne[N], h[N], idx,dist[N];
+//bool st[N];
+//int n, m,x,y;
+
+//void add(int a, int b) {
+//	e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+//}
+//int spfa() {
+//	memset(dist, 0x3f, sizeof dist);
+//	queue<int>q;
+//	q.push(x);
+//	dist[x] = 0;
+//	st[x] = true;
+//	while (!q.empty()) {
+//		int t = q.front();
+//		q.pop();
+//		for (int i = h[t];i != -1;i = ne[i]) {
+//			int j = e[i];
+//			if (dist[j] > dist[t] + 1) {
+//				dist[j] = dist[t] + 1;
+//				if (!st[j]) {
+//					q.push(j);
+//					st[j] = true;
+//				}
+//			}
+//		}
+//	}
+//	return dist[y];
+//}
+//int main() {
+//	memset(h, -1, sizeof h);
+//	cin >> n >> m;
+//	for (int i = 0;i < n;i++) {
+//		int a;
+//		cin >> a;
+//	}
+//	while (m--) {
+//		int a, b;
+//		cin >> a >> b;
+//		add(a, b);
+//	}
+//	int w;
+//	scanf("%d,%d,%d", &x, &y,&w);
+//	if (spfa() == w)cout << "Exist the path!";
+//	else cout << "Not exist the path!";
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+//#include<iostream>
+//#include<cstring>
+//#include<queue>
+//#include<algorithm>
+//using namespace std;
+//
+//const int N = 110;
+//int e[N], ne[N], h[N], idx;
+//bool st[N];
+//int n, m;
+//
+//void add(int a, int b) {
+//	e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+//}
+//
+//int main() {
+//	memset(h, -1, sizeof h);
+//	cin >> n ;
+//	for (int i = 0;i < n;i++) {
+//		char a;
+//		cin >> a;
+//	}
+//	cin >> m;
+//	while (m--) {
+//		char a, b;
+//		cin >> a >> b;
+//		add(a - 'A' + 1, b - 'A' + 1);
+//	}
+//	char x, y;
+//	cin >> x >> y;
+//	int flag = 1;
+//	queue<int>q;
+//	q.push(x - 'A' + 1);
+//	st[x - 'A' + 1] = true;
+//	while (!q.empty()) {
+//		int t = q.front();
+//		q.pop();
+//		for (int i = h[t];i != -1;i = ne[i]) {
+//			int j = e[i];
+//			if (j == y - 'A' + 1) {
+//				cout << 1;
+//				flag = 0;
+//				break;
+//			}
+//			if (!st[j]) {
+//				q.push(j);
+//				st[j] = true;
+//			}
+//		}
+//		if (flag == 0)break;
+//	}
+//	if (flag)cout << 0;
+//	return 0;
+//}
+
+
+
+
+
+//#include<cstring>
+//#include<queue>
+//#include<stdio.h>
+//#include<iostream>
+//#include<algorithm>
+//using namespace std;
+//const int N = 110;
+//int e[N], ne[N], h[N], idx;
+//int n, m;
+//int cnt[N] = { 0 }, pa[N];
+//bool st[N];
+//
+//void add(int a, int b) {
+//	e[idx] = b, cnt[b]++, ne[idx] = h[a], h[a] = idx++;
+//}
+//
+//int main() {
+//	memset(h, -1, sizeof h);
+//	scanf("%d,%d", &n, &m);
+//	for (int i = 0;i < n;i++) {
+//		char a;
+//		cin >> a;
+//	}
+//	while (m--) {
+//		int a, b;
+//		scanf("%d,%d", &a, &b);
+//		add(a+1, b+1);
+//	}
+//	queue<int>q;
+//	for (int i = 1;i <= n;i++) {
+//		if (!cnt[i]) {
+//			q.push(i);
+//			st[i] = true;
+//		}
+//	}
+//	int count = 0;
+//	while (!q.empty()) {
+//		int tmp = q.front();
+//		q.pop();
+//		count++;
+//		
+//		//printf("%c,%d;", tmp + 'a'-1, count);
+//		pa[tmp] = count;
+//		for (int i = h[tmp];i != -1;i = ne[i]) {
+//			int j = e[i];
+//			cnt[j]--;
+//			/*if (!cnt[j]&&!st[j]) {
+//				q.push(j);
+//				st[j] = true;
+//			}*/
+//		}
+//		for (int i = 1;i <= n;i++) {
+//			if (!cnt[i]&&!st[i]) {
+//				q.push(i);
+//				st[i] = true;
+//			}
+//		}
+//	}
+//	for (int i = 1;i <= n;i++) {
+//		/*if (pa[i] == 0)
+//			printf("%c,%d;", i + 'a' - 1, i);
+//		else*/
+//			printf("%c,%d;", i + 'a' - 1, pa[i]);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+//
+//#include<cstring>
+//#include<iostream>
+//#include<algorithm>
+//using namespace std;
+//const int N = 110;
+//int g[N][N], dist[N];
+//bool st[N];
+//int n, m;
+//
+//int prim() {
+//	memset(dist, 0x3f, sizeof dist);
+//	int ans = 0;
+//	for (int i = 0;i < n;i++) {
+//		int t = -1;
+//		for (int j = 1;j <= n;j++) {
+//			if (!st[j] && (t == -1 || dist[t] > dist[j])) {
+//				t = j;
+//			}
+//		}
+//		st[t] = true;
+//		if (i)ans += dist[t];
+//		for (int j = 1;j <= n;j++)dist[j] = min(dist[j], g[t][j]);
+//	}
+//	return ans;
+//}
+//
+//int main() {
+//	memset(g, 0x3f, sizeof g);
+//	cin >> n >> m;
+//	while (m--) {
+//		int a, b, c;
+//		cin >> a >> b >> c;
+//		g[a][b] = g[b][a] = min(g[a][b], c);
+//	}
+//	int t = prim();
+//	cout << t;
+//	return 0;
+//}
 
 
 
