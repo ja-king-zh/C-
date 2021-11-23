@@ -309,6 +309,7 @@ void MergeSortNor(int* a, int n) {
 	free(tmp);
 	tmp = NULL;
 }
+//¼ÆÊýÅÅÐò
 void CountSort(int* a, int n) {
 	int maxi = a[0], mini = a[0];
 	for (int i = 1;i < n;i++) {
