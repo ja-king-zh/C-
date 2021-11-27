@@ -1,58 +1,98 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include<cstring>
 #include<iostream>
-#include<queue>
 #include<algorithm>
-using namespace std;
-const int N = 110;
-int e[N], ne[N], h[N], idx;
-bool st[N],qst[N];
-int n, m;
+#include<stdio.h>
+#include<queue>
 
-void add(int a, int b) {
-	e[idx] = b, ne[idx] = h[a], h[a] = idx++;
-}
-void dfs(int x) {
-	st[x] = true;
-	cout << x << ' ';
-	for (int i = h[x];i != -1;i = ne[i]) {
-		int j = e[i];
-		if(!st[j])
-			dfs(j);
-	}
-}
-int main() {
-	memset(h, -1, sizeof h);
-	cin >> n >> m;
-	for (int i = 0;i < n;i++) {
-		int a;
-		cin >> a;
-	}
-	while (m--) {
+using namespace std;
+
+
+int main()
+{
+	priority_queue<int, vector<int>, greater<int> >heap;
+	int x;
+	char a = 'a';
+	do
+	{
+		cin >> x;
+		heap.push(x);
+	} while (cin.get() != '\n');
+
+	int ans = 0;
+	while (heap.size() > 1)
+	{
 		int a, b;
-		cin >> a >> b;
-		add(a, b);
-		add(b, a);
+		a = heap.top();
+		heap.pop();
+		b = heap.top();
+		heap.pop();
+		heap.push(a + b);
+		ans += a + b;
+		//printf("%d\n", a + b);
 	}
-	dfs(1);
-	cout << endl;
-	queue<int>q;
-	q.push(1);
-	qst[1] = true;
-	while (!q.empty()) {
-		int t = q.front();
-		q.pop();
-		cout << t << ' ';
-		for (int i = h[t];i != -1;i = ne[i]) {
-			int j = e[i];
-			if (!qst[j]) {
-				q.push(j);
-				qst[j] = true;
-			}
-		}
-	}
+	cout << ans;
+
+
+
 	return 0;
 }
+
+
+
+//#include<cstring>
+//#include<iostream>
+//#include<queue>
+//#include<algorithm>
+//using namespace std;
+//const int N = 110;
+//int e[N], ne[N], h[N], idx;
+//bool st[N],qst[N];
+//int n, m;
+//
+//void add(int a, int b) {
+//	e[idx] = b, ne[idx] = h[a], h[a] = idx++;
+//}
+//void dfs(int x) {
+//	st[x] = true;
+//	cout << x << ' ';
+//	for (int i = h[x];i != -1;i = ne[i]) {
+//		int j = e[i];
+//		if(!st[j])
+//			dfs(j);
+//	}
+//}
+//int main() {
+//	memset(h, -1, sizeof h);
+//	cin >> n >> m;
+//	for (int i = 0;i < n;i++) {
+//		int a;
+//		cin >> a;
+//	}
+//	while (m--) {
+//		int a, b;
+//		cin >> a >> b;
+//		add(a, b);
+//		add(b, a);
+//	}
+//	dfs(1);
+//	cout << endl;
+//	queue<int>q;
+//	q.push(1);
+//	qst[1] = true;
+//	while (!q.empty()) {
+//		int t = q.front();
+//		q.pop();
+//		cout << t << ' ';
+//		for (int i = h[t];i != -1;i = ne[i]) {
+//			int j = e[i];
+//			if (!qst[j]) {
+//				q.push(j);
+//				qst[j] = true;
+//			}
+//		}
+//	}
+//	return 0;
+//}
 
 
 
